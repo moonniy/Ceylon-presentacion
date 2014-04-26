@@ -1,0 +1,1248 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Ceylon</h1>
+					<h3>El viaje del elefante</h3>
+                    <img src="/lib/img/trompon.svg" title="trompon" alt="Mascota de Ceylon - Trompon"/>
+					<p>
+						<small>Creado por <a href="http://zoek1.github.com">Miguel Angel Gordian</a> / <a href="http://twitter.com/ilcapitanozoek">@ilcapitanozoek</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Resumen</h2>
+                    <ol>
+                      <li>¿Qué es Ceylon?</li>
+                      <li>Caracteristicas principales</li>
+                      <li>Demo</li>
+                    </ol>
+
+					<aside class="notes">
+                      1. Que es ceylon, orientacion y su origen
+                      2. Elementos que caracterizan a Ceylon como algo diferente
+                      3. Projectos que son el resultado de la investigación 
+					</aside>
+				</section>
+<section>
+  <section>
+    <h1>¿Que es Ceylon?</h1>
+  </section>
+  <section>
+    <img src="/lib/img/trompon.svg">
+    <blockquote><b>Es un lenguaje para escribir programas extensos en equipos.</b></blockquote>
+  </section>
+  <section>
+    <h2>Potente</h2>
+    <p>
+      Ceylon tiene un poderoso sistema de tipos estaticos que previenen muchos
+      bugs mientras te permite expresar mas, mas facilmente: 
+    </p>
+    <br>
+    <ul>
+      <li>union types</li>
+      <li>intersection types</li>
+      <li>higher order functions</li>
+      <li>mixin inheritance</li>
+      <li>enumerated types.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Legible</h2>
+    <p>
+      La realidad es que gastamos mas tiempo leyendo el codigo de otros que
+      escribiendo el nuestro. 
+      Debido a esto, Ceylon priopiza la legibilidad mediante una sintaxis 
+      regular, soporte para structuras tipo arbol y un poco de azucar
+      sintatica donde es conveniente.
+    </p>
+  </section>
+  <section>
+    <h2>Predictivo</h2>
+    <p>
+      Ceylon controla la complexidad con claridad. 
+      El lenguaje evita caracterisicas implicitas magicas con casos ambiguos. 
+      El compilador sigue reglas simples e intuitivas y 
+      produce errores signficativos.
+    </p>
+  </section>
+  <section>
+    <h2>Modular</h2>
+    <p> 
+      Ceylon es una plataforma completa con un moderno SDK diseñado desde cero. 
+      Corre en las maquinas de Java y JS. Ceylon provee  interoperavilidad con
+      Java and el Java SDK.
+    </p>
+  </section>
+  <section>
+    <h2>Con Herramientas</h2>
+    <p>
+      Modularidad es el nucleo de el lenguaje, SDK y herramientas. 
+      El compilador produce modulos que pueden ser distribuidos 
+      mediante la siguiente generación de arquitectura de 
+      repositorios con Ceylon Herd como su enfoque social principal.
+    </p>
+  </section>
+  <section>
+  <h2>Una plataforma</h2>
+  <p>
+    Tipado estaticio es la tecnologia que necesita killer tools. 
+    Ceylon trae consigo una conjunto de comandos muy completo, 
+    y una IDE (Eclipse) con busqueda, refactoring, quick fixes + asistencia, 
+    autocompletado, debugging, y mucho mas.
+  </p>
+  </section>
+</section>
+<section>
+  <h1>Break</h1>
+  Instalar algunas herramientas y dar el primer paso.
+</section>
+<section>
+  <section>
+    <h1>Diseccion del <br> comando Ceylon</h1>
+  </section>
+  <section>
+    <h2>new</h2>
+    <p>Genera un nuevo projecto de Ceylon</p>
+    <pre>
+      <code data-trim contenteditable>
+moon@ilcapitano : /tmp % ceylon new hello-world -- hola
+Enter module name [com.example.helloworld]: org.kaltia.hola
+Enter module version [1.0.0]:
+Would you like to generate Eclipse project files? (y/n): y
+Enter Eclipse project name [org.kaltia.hola]:
+Would you like to generate an ant build.xml? (y/n): y
+      </code>
+    </pre>
+
+  </section>
+  <section>
+    <h2>compile y compile-js</h2>
+    <p>Compila codigo fuente de Ceylon y Java y produce un modulo y archivos fuente en un repositorio.</p>
+
+    <pre>
+      <code data-trim contenteditable>
+ceylon compile org.kaltia.hola
+Note: Created module com.example.hola/1.0.0
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>run y run-js</h2>
+
+    <p>Ejecuta un programa de Ceylon.</p>
+
+    <pre>
+      <code data-trim contenteditable>
+ceylon run org.kaltia.hola/1.0.0
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>info</h2>
+    <p>Muestra informacion acerca de los modulos en los repositorios.</p>
+    <pre>
+      <code data-trim contenteditable>
+ceylon info org.kaltia.hola
+Showing versions for module: com.example.helloworld
+    1.0.0
+      </code>
+    </pre>
+  </section>
+  <section>
+    <section>
+      <h2>doc</h2>
+      <p>Genera la documentación de la API desde las fuentes del modulo.</p>
+      <pre>
+        <code data-trim contenteditable>
+ceylon doc org.kaltia.hola
+    1.0.0
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>doc-tool</h2>
+      <p>Genera la documentacion de una herramienta en el directorio especificado.</p>
+      <pre>
+        <code data-trim contenteditable>
+ceylon doc-tool --output=./compile-doc compile 
+        </code>
+      </pre>
+  </section>
+  </section>
+  <section>
+    <h2>import-jar</h2>
+    <p>Importa un archivo jar a un repositorio de Ceylon.</p>
+    <pre>
+      <code data-trim contenteditable>
+ceylon import-jar org.neo4j.cypher/2.0.0 ~/Scrivania/neo4j-community-2.1.0-M01/lib/neo4j-cypher-2.1.0-M01.jar
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>src</h2>
+    <p>Obtiene las fuentes desde un repositorio y extrae su contenido dentro del directorio source.</p>
+    <pre>
+      <code data-trim contenteditable>
+rm -r sources # Borrado accidental
+ceylon src org.kaltia.hola
+tree source
+source
+`-- com
+    `-- example
+        `-- helloworld
+            |-- module.ceylon
+            |-- package.ceylon
+            `-- run.ceylon
+
+3 directories, 3 files
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>config</h2>
+    <p>Manipula los archivos de configuracion de Ceylon.</p>
+
+    <pre>
+      <code data-trim contenteditable>
+ceylon config --local set resource.compiler force
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>version</h2>
+    <p>Muestra y actualiza el numero de version en el descriptor de modulo.</p>
+    <pre>
+      <code data-trim contenteditable>
+ceylon version --set 1.0.1 --dependencies ceylon.collection
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>help</h2>
+    <p>Muestra informacion importante acerca de las herramientas de Ceylon.</p>
+  </section>
+</section>
+<section>
+  <h1>break 2</h1>
+</section>
+<section>
+  <section>
+    <h1>Caracteristicas del lenguaje Ceylon</h1>
+  </section>
+  <section>
+    <h2>Sintaxis familiar</h2>
+    <p> Sintaxis comun en lenguajes derivados de C como Java y C++.</p>
+    <pre>
+      <code data-trim contenteditable>
+void saluda(sujeto="Mundo") {
+  print("Hola ``Mundo``");
+}
+      </code>
+    </pre>
+    <aside class="notes">
+      <ul>
+        <li>Minimizar la curva de aprendizaje.</li>
+        <li>Implica basarse en conceptos establecidos con anterioridad.</li>
+        <li>Mejorar conceptos lacsos en otros ambientes.</li>
+      </ul>
+    </aside>
+
+  </section>
+  <section>
+    <h2>Sintaxis declarativa para estructuras en forma de arbol.</h2>
+    <p>Permite adaptarse a estrcuturas en forma de arbol.</p>
+    <pre>
+      <code data-trim contenteditable>
+Html html = Html {
+   doctype = html5;
+   Head { title = "Ceylon: home page"; };
+   Body {
+      H2 ( "Welcome to Ceylon ``language.version``!" ),
+      P ( "Now get your code on :)" )
+   };
+};    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Documentacion como prioridad</h2>
+    <p>
+      Mediante anotaciones produce informacion valiosa y que es 
+      exportada por herramientas de Ceylon.
+    </p>
+    <pre>
+      <code data-trim >
+"This module is just a silly example. You'll
+ find some proper modules in the community
+ repository [Ceylon Herd][Herd].
+ 
+ [Herd]: http://modules.ceylon-lang.org
+ 
+ Happy Herding!"
+module org.jboss.example "1.0.0" {        
+    import ceylon.math "0.3.0";
+    import ceylon.file "0.3.1";
+}
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Tipos de datos (nada nativo)</h2>
+    <p>No existen tipos de datos nativos en Ceylon.</p>
+
+    <table width="" cellspacing="" cellpadding="" border="">
+      <tr>
+        <th>literal</th>
+        <th>tipo</th>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Integer</td>
+      </tr>
+      <tr>
+        <td>1.0</td>
+        <td>Float</td>
+      </tr>
+      <tr>
+        <td>"cadena"</td>
+        <td>String</td>
+      </tr>
+      <tr>
+        <td>(Integer x) =&lt; x</td>
+        <td>Integer(Integer)</td>
+      </tr>
+      <tr>
+        <td>`interface Request`</td> 
+        <td>InterfaceDeclaration</td>
+      </tr>
+      <tr>
+        <td>class Persona() {}</td>
+        <td>Persona()</td>
+      </tr>
+      <tr>
+        <td>Persona()</td><td>Persona</td>
+      </tr>
+    </table>
+    <aside class="notes">
+      Implica la abstraccion sobre distintas plataformas
+    </aside>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>Estructuras</h1>
+  </section>
+  <section>
+    <h2>if</h2>
+    <p> 
+      Aplica a condicion Booleana.
+      Permite estrechar el tipo.
+    </p>
+
+    <pre>
+      <code data-trim>
+if (is Integer x, x < 10) {
+  return x + 1;
+}        
+      </code>
+    </pre>
+
+  </section>
+  <section>
+    <h2>while</h2>
+    <p>
+      Justo como en derivados de C, permite el uso de break and continue.
+      Tambien puede estrechar el tipo.
+    </p>
+  </section>
+  <section>
+    <h2>assert</h2>
+    <ul>
+      <li>Valida las condiciones, lanzando una excepcion del tipo</li>
+      <li>AssertionException si no son cumplidas las condiciones.</li>
+      <li>Tambien puede estrechar el tipo.</li>
+      <li>No puede ser deshabilitada en tiempo de ejecucion.</li>
+    </ul>
+      
+
+    <pre>
+      <code data-trim>
+void printSqrt(Object x) {
+  assert (is Float x, x >= 0.0);
+  print(x^0.5);
+}
+      </code>
+    </pre>
+
+    <aside class="notes">
+Necesitamos saber que errores ocurrieron en sistemas en produccion
+y los asserts nos ayudan a eso.
+    </aside>
+  </section>
+  <section>
+    <h2>Estrechamiento de tipo</h2>
+    <p>
+      Teniendo un elemento que puede ser de multiples tipos, podemos
+      verificar si es el elemento que deseamos y ajustar la ejecucion 
+      acorde a su diseño.
+    </p>
+
+    <pre>
+      <code data-trim>
+value num = parseInteger("1");
+// before the assert statement num is of type Integer?
+assert (exists num);
+// after the assert statement num is of type Integer
+value plusOne = num + 1;
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>for</h2>
+    <p>Itera a traves de los objectos producidos por un objeto iterable.</p>
+
+    <pre>
+      <code data-trim>
+for (p in people) {
+  if (p.age&lt;18) {
+    minors = true;
+    break;
+  }
+} else {
+  minors = false;
+}
+                </code>
+    </pre>
+
+    <aside class="notes">
+      <ul>
+        <li>Early exit si la ejecucion del bloque termine con return o throw.</li>
+        <li>Util para cuando se necesita encontrar un elemento en una lista y
+          no ha sido encontrado.
+        </li>
+    </aside>
+  </section>
+  <section>
+    <h2>comprension</h2>
+    <p>Permite filtrar y tranformar flujos de valores.</p>
+
+    <pre>
+      <code data-trim>
+[ for (p in people) if (p.age&gt;=18) p ]
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>switch</h2>
+    <p>
+      Ejecuta codigo condicionalmente acorde a lista de casos
+      Tres casos:
+    </p>      
+    <h3>Enumerated types</h3>
+    <pre>
+      <code data-trim>
+void switchOnEnumValues(Boolean b) {
+    switch(b)
+    case (true) {
+        print("yes");
+    }
+    case (false) {
+        print("no");
+    }
+}    
+      </code>
+    </pre>
+    <aside class="notes">
+      Si los casos cubren todos los valores:
+      <ul>
+        <li> Es exaustivo</li>
+        <li> La clausula else es prohibida</li>
+      </ul>
+      Elimina el comportamiento por defecto de caida libre.
+    </aside>
+  </section>
+  <section>
+    <h2>switch</h2>
+    <h3>Condicional</h3>
+
+    <pre>
+      <code data-trim>   
+void switchOnEnumTypes(Foo|Bar|Baz var) {
+    switch(var)
+    case (is Foo) {
+        print("FOO");
+    }
+    case (is Bar) {
+        print("BAR");
+    }
+    case (is Baz) {
+        print("BAZ");
+    }
+}
+      </code>
+    </pre>
+
+    <aside class="notes">
+      Si los casos cubren todos los valores:
+      <ul>
+        <li> Es exaustivo</li>
+        <li> La clausula else es prohibida</li>
+      </ul>
+        Elimina el comportamiento por defecto de caida libre.
+    </aside>
+  </section>
+  <section>
+    <h2>switch</h2>
+    <h3>Con literales</h3>
+    <pre>
+      <code data-trim>       
+void switchOnLiteralValues(Integer i) {
+    switch (i)
+    case (0) {
+        print("zero");
+    }
+    case (1) {
+        print("one");
+    }
+    case (2) {
+        print("two");
+    }
+    else {
+        print("lots");
+    }
+}
+      </code>
+    </pre>
+
+    <aside class="notes">
+      Si los casos cubren todos los valores:
+      <ul>
+        <li> Es exaustivo</li>
+        <li> La clausula else es prohibida</li>
+        </ul>
+      Elimina el comportamiento por defecto de caida libre.
+    </aside>
+  </section>
+  <section>
+    <h2>Tuplas</h2>
+    <p>
+      Es un tipo de lista ligada, onde el tipo estatico de la lista 
+      coincide con el tipo de cada elemento en la lista.
+    </p>
+    <pre>
+      <code data-trim>
+        [Float,Float,Float,String] origin = [0.0, 0.0, 0.0, "origin"];        
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Iterables</h2>
+    <p>
+      Son objetos que producen un flujo de valores. los iterables 
+      satisfacen la interfas Iterable.
+
+      Ceylon provee dos formas de lidiar con iterables.
+      Se pueden construir iterables usando llaves.
+      <b>Valores opcionales</b>:
+    </p>
+
+    <pre data-trim>
+      <code>
+{String*} words = { "hello", "world" };    
+      </code>
+    </pre>
+
+    <p><b>Valores obligatorios</b>:</p>
+
+    <pre>
+      <code data-trim>
+{String+} words = { "hello", "world" };
+{String+} moreWords = { "hola", "mundo", *words };    
+      </code>
+    </pre>
+
+  </section>
+  <section>
+    <h2>-&gt; (Entry)</h2>
+    <p>Operador infijo crea una Entrada tomando una clave y un valor.</p>
+    <pre>
+      <code data-trim>
+Entry<Integer, String> intName = 1 -&gt; "One";
+
+HashMap { for (p in people) p.firstName + " " + p.lastName -&gt; p }    
+      </code>
+    </pre>
+
+  </section>
+  <section>
+    <h2>Excepciones</h2>
+    <p>Sigue los mismos fundamentos que Java, deriva de Exception.</p>
+
+    <pre>
+      <code>
+try {
+    // some code
+} catch (ReadException e) {
+    // clean up code
+} catch (WriteException e) {
+    // clean up code
+} finally {
+    // clean up code
+}
+      </code>
+    </pre>
+
+    <p>O con una expresion</p>
+    <pre>
+      <code>
+try (Reader input = open('/etc/passwd')) {
+    // ...
+}  
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h1>BONO</h1>
+  </section>
+  <section>
+    <h2>Rangos</h2>
+    <p>Podemos utilizar rangos para generar iterables.</p>
+
+    <pre>
+      <code data-trim>
+Character[] uppercaseLetters = 'A'..'Z';
+Integer[] countDown = 10..0;
+      </code>
+    </pre>      
+
+Tambien pueden ser utilizados en Tuplas
+
+    <pre>
+      <code data-trim>
+Character[] saludo = "hola"[1:3]; // Empieza desde el indice uno 
+                                   // y toma 3 valores
+Integer[] despedida = "Adios"[0..3]; // Toma desde el indice 0 al 3    
+      </code>
+    </pre>
+
+    <aside class="notes">
+      Son implementaciones de la intefas Ranged.
+    </aside>
+  </section>
+  <section>
+    <h2>Expansion</h2>
+    <p>El operador * permite expandir los elementos dentro de un iterable.</p>
+
+    <pre>
+      <code data-trim>
+String[] args(String* e) =&gt; e;
+args("uno", "dos");
+args(*{"uno", "dos"});
+
+{String+} names = {"foo", "bar", "baz"};
+{Integer+} sizes = names*.size;
+
+{String+} names = {"foo", "bar", "baz"};
+{String+} initials = names*.initial(1);    
+      </code>
+    </pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>Polimorfismo</h1>
+  </section>
+  <section>
+    <h2>Polimorfismo de Operadores</h2>
+    <p>
+      Casi todos los operadores pueden ser expresados en terminos de
+      metodos definidos en clases e/o interfaces en el modulo del lenguaje.
+    </p>
+    <pre>
+    <code data-trim>
+x.equals(y); =&gt;  x==y;    
+    </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Primitivas</h2>
+    <p>
+      Los operadores que no tienen tales definiciones son llamados operadores
+      primitivos.
+    </p>
+
+    <ul>
+      <li>. (member)</li>
+      <li>= (assignment)</li>
+      <li>=== (identity)</li>
+      <li>is</li>
+      <li>of</li>
+      <li>() (positional invocation)</li>
+      <li>{} (named argument invocation)</li>
+
+    </ul>
+  </section>
+  <section>
+    <h2>Advice</h2>
+    <p>
+      Si una identidad no aplica para T entonces nno puedes usar 
+      esa identidad para reescribir las expresiones que envuelven a T
+    </p>
+  </section>
+</section>
+<section>
+  <section><h1>Tipos</h1></section>
+  <section>
+ <h2>Principal typing</h2>
+ <ul>
+   <li>El sistema de tipos esta basado en el analisis de el "mejor" o
+     los tipos principales.</li> 
+   <li>Para cada expresion, un unico tipo mas especifico puede ser determinado,
+     sin la necesidad de analizar el resto de la expresiones en las que aparece.</li>
+   <li>Todos los tipos usados por el compilador son <b>denotables</b>.</li>
+</ul>
+  
+ <pre>
+   <code data-trim>
+List&lt;capture#3-of ?&gt;   
+   </code>
+ </pre>
+
+ <aside class="notes">
+   <b>Denotable</b> Esto es que pueden ser expresados en el lenguaje.
+   El compilador produce errores que los humanos pueden entender incluso
+   cuando trabajamos con tipos genericos complejos.
+ </aside>
+
+   <ul> 
+     <li>una parte integral de Ceylon es que provee soporte de primer orden 
+     a tipos union e interseccion.</li>
+   </ul>
+  </section>
+  <section>
+    <h2>union</h2>
+    <p>Es tipo que acepta instancias de caulquiera de los tipos de una lista.</p>
+
+    <pre>
+      <code data-trim>
+Person|Organization personOrOrganization = ... ;        
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>intersección</h2>
+    <p>Es un tipo que acepta instancias que cumplen todos los tipos de </p>
+    <pre>
+      <code data-trim>
+Printable&Sized&Persistent printableSizedPersistent = ... ;    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Inferencia de tipos</h2>
+    <p>Dado el siguiente codigo:</p>
+    <pre>
+      <code date-trim>
+value stuff = { "hello", "world", 1.0, -1 };
+value joinedStuff = concatenate({"hello", "world"}, {1.0, 2.0}, {});    
+      </code>
+    </pre>
+
+    <p>El compilador infiere los tipos:</p>
+    <pre>
+      <code data-trim>
+Iterable&lt;String|Float|Integer&gt; -&gt; stuff
+Sequential&lt;String|Float&gt; -&gt; joinedStuff.
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Typesafe null</h2>
+    <p>     
+      No existe <b>NullPointerException</b> en Ceylon o algo similar.     
+      Ceylon requiere que especifiquemos cuando un tipo puede ser null;
+    </p>
+
+    <pre>
+      <code>
+String? nombre = ...;    
+      </code>
+    </pre>
+
+    <p>es azucar sintactica para:</p>
+
+    <pre>
+      <code>
+String|Null nombre = ...;    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Flow-sensitive typing</h2>
+    <p>     
+      Es la habilidad para estrechar un tipo usando condiciones como
+      <b>is</b> y <b>exists</b>.
+    </p>
+
+    <pre>
+      <code data-trim>
+void hello(String? name) {
+    if (is String name) {
+        print("Hello, ``name``!");
+    }
+    else {
+        print("Hello, world!");
+    }
+}
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Subtipos enumerados</h2>
+    <p>Podemos emular el funcionamiento de los enums que hay en Java.</p>
+
+    <pre>
+      <code data-trim>
+abstract class Suit(String name)
+        of hearts | diamonds | clubs | spades {}
+ 
+object hearts extends Suit("hearts") {}
+object diamonds extends Suit("diamonds") {}
+object clubs extends Suit("clubs") {}
+object spades extends Suit("spades") {}    
+      </code>
+    </pre>
+
+    <p>Y consumir todos los casos en Suit con switch:</p>
+
+
+    <pre>
+      <code data-trim>
+void printSuit(Suit suit) {
+    switch (suit)
+    case (hearts) { print("Heartzes"); }
+    case (diamonds) { print("Diamondzes"); }
+    case (clubs) { print("Clidubs"); }
+    case (spades) { print("Spidades"); }
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Disjoint</h2>
+
+    <ul>
+      <li>si =X= y =Y= son clases, =X= no es una subclase de =Y= y =Y= no es una subclase de =X=.</li>
+      <li>Si =X= es una clase final y =Y= es una interfaz no satisfecha por =X=</li>
+      <li>Dos instancias de un tipo generico puede ser disjoint, =MutableList<String> and MutableList<Integer>=.</li>
+    </ul>
+  </section>
+  <section>
+    <h2>Alias</h2>
+    <p>
+      Provee de un nombre mas corto o mas semantico a una clase o interfas
+      existente, especialmente si la clase o interfaz es un tipo parametrisado.
+
+      Para uniones e intersecciones:
+    </p>
+    <pre>
+      <code data-trim>
+alias Num =&gt; Float|Integer;      
+      </code>
+    </pre>
+</section>
+<section>
+    <p>En interfaces:</p>
+    
+    <pre>
+      <code data-trim>
+shared interface People =&gt; Set<Person>;    
+      </code>
+    </pre>
+
+    <p>En clases:</p>
+    <pre>
+      <code data-trim>
+class Named<Value>(String name, Value val)
+        given Value satisfies Object
+        =&gt; Entry&lt;String,Value&gt;(name,val);    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <p>Tambien puedes refinar un alias si es miembro de una clase.</p>
+    
+    <pre>
+      <code data-trim>
+class BufferedReader(Reader reader)
+        satisfies Reader {
+    shared default class Buffer()
+        =&gt; MutableList&lt;Character&gt;();
+}
+
+class BufferedFileReader(File file)
+        extends BufferedReader(FileReader(file)) {
+    shared actual class Buffer()
+        =&gt; MutableLinkedList&lt;Character&gt;();
+    ...
+}    
+      </code>
+    </pre>
+  </section>
+</section>
+<section>
+  <section>
+    <h1>Funciones, Clases e interfaces</h1>
+  </section>
+  <section>
+    <h2>Funcion</h2> 
+    <p>Funciones son como en C.</p>
+
+    <pre>
+      <code data-trim>
+void colorFavorito(Color c) {
+   print("Mi color favorito es ``c``");
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Funciones de orden superior</h2>
+    <p>
+      Permiten ser pasadas como parametro y devueltas por una funcio, ademas
+      pueden ser asignadas a variables como valores.
+    </p>
+    <pre>
+      <code data-trim>
+alias Color =&gt; String;
+value devulveFuncionColor =&gt;
+	void(Color? c=null) {
+		if (exists c) {
+			print("Mi color favorito es ``c``");
+		}else {
+			print("En ausencia de luz la oscuridad prevalece");
+		}
+	};
+	
+devulveFuncionColor ();    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Aplicacion parcial</h2>
+    <p>
+      Permite que una funcion pueda tener varias listas de paramentros,
+      cada una significando una invacion que devuelve otra funcion.
+    </p>
+    <pre>
+      <code data-trim>
+Integer suma(Integer x)(Integer Y) {
+   return x+y;
+}
+
+value suma3 = suma(3);
+suma3(5); //=&gt; 8    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Clases e interfaces</h2>
+    <p>Lucen similar a java.</p>
+
+    <pre>
+      <code data-trim>
+"A polar coordinate"
+class Polar(angle, radius) {
+ 
+    shared Float angle;
+    shared Float radius;
+ 
+    shared Polar rotate(Float rotation) =&gt;
+            Polar(angle+rotation, radius);
+ 
+    shared Polar dilate(Float dilation) =&gt;
+            Polar(angle, radius*dilation);
+ 
+    shared String description = "(``radius``,``angle``)";
+ 
+}    
+      </code>
+    </pre>
+
+    <p>Y las interfaces tambien.</p>
+
+    <pre>
+      <code>
+interface Writer { 
+    shared formal Formatter formatter;
+ 
+    shared formal void write(String string);
+ 
+    shared void writeLine(String string) {
+        write(string);
+        write("\n");
+    }
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Clases abstractas</h2>
+    <p>Ademas por medio de una anotacion podemos tener una clase abstracta.</p>
+
+    <pre>
+      <code data-trim>
+abstract class Point() {
+ 
+     shared formal Polar polar;
+     shared formal Cartesian cartesian;
+ 
+     shared formal Point rotate(Float rotation);
+     shared formal Point dilate(Float dilation);
+ 
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Refinamiento</h2>
+    <p>
+      Tambien por medio de anotaciones podemos indicar cuando
+      podemos reimplementar un elemento.
+    </p>
+
+    <pre>
+      <code data-trim>
+class Persona(String nombre) {
+     shared default String description =&gt;
+            "(Me llamo ``nombre``)";
+}
+
+class Nerd(String n, String frase) extends Persona(n) {
+     shared default String description =&gt;
+            super.description + ", " + frase;
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Multiherencia</h2>
+    <p>
+      Usando el tipo interseccion junto con las interfaces podemos
+      simular un tipo Multiherencia.
+    </p>
+
+    <pre>
+      <code data-trim>
+interface Persona {
+   shared formal String name;
+   shared formal String edad;
+   shared Boolean vivo() =&gt; ...;
+}
+
+interface Ubicacion {
+  shared formal String dir;
+  shared UCartesiana uCartesiana() =&gt; ...;
+}
+
+class Hogar(name, edad, dir) satisfies Persona&Ubicacion{
+	shared actual String dir;
+	shared actual String edad;
+	shared actual String name;
+}    
+      </code>
+    </pre>
+  </section>
+  <section>
+    <h2>Generics y Restricciones y varianza</h2>
+    <p>
+      Ceylon provee legibilidad al codigo, tipos genericos y la
+      posibilidad de imponer restriccion a estos.
+    </p>
+    <pre>
+      <code>
+shared class Singleton<out Element>(Element element)
+        extends Object()
+        satisfies [Element+]
+        given Element satisfies Object { ... }    
+      </code>
+    </pre>
+  </section>
+</section>
+<section>
+  <h2> Modulos</h2>
+  <p> 
+    Ceylon tambien se caracteriza por proveer a nivel de lenguaje constructores 
+    para <p></p>aquetes y modulos, que van deacuerdo a un control de acceso provisto 
+  por =shared=.
+  </p>
+
+  <pre>
+    <code data-trim>
+"[Herd]: http://modules.ceylon-lang.org
+ 
+ Happy Herding!"
+module org.jboss.example "1.0.0" {        
+    import ceylon.math "0.3.0";
+    import ceylon.file "0.3.1";
+}    
+    </code>
+  </pre>
+</section>
+<section>
+  <h2>Anotaciones</h2>
+  <p>
+  Una anotacion es una funcion superior que devuelve un subtipo de 
+  =ConstrainedAnnotation=. Vamos a llamar a esta funcion un *contructor
+  de anotacion*.
+  </p>
+  <pre>
+    <code data-trim>
+"Annotation to specify API documentation of a program
+ element."
+shared annotation DocAnnotation doc(String description) =>
+        DocAnnotation(description);
+    </code>
+  </pre>
+</section>
+<section>
+<h2>Metaprogramación</h2>
+<p>
+  Dada la capacidad de Ceylon de instrospeccion, podemos inspeccionar
+  modulos y paquetes, asi como miembros de clases y asi poder
+  ajustar el comportamiento de nuestro programa en tiempo de ejecución.
+</p>
+
+<pre>
+  <code>
+value end = Endpoint {
+			path = startsWith("/echo");
+			service(Request request, Response response) => 
+					response.writeString(request.queryString);	
+		};    
+  </code>
+</pre>
+
+<pre>
+  <code data-trim>
+value p = `package org.kaltia.celya.endpoints`;
+value ns = p.members<ValueDeclaration>();
+// assert(nonempty ns);
+value server = newServer ([  for (i in ns)  if (is Endpoint i ) i ]);    
+  </code>
+</pre>
+</section>
+<section>
+  <h2>Interoperabilidad</h2>
+  <ul>
+    <li>Java</li>
+    <li>JavaScript</li>
+  </lu>
+</section>
+
+<section>
+<h2>Demo</h2>
+<ul>
+  <li>Redis Driver</li>
+  <li>Server on heroku</li>
+  <li>App on FirefoxOs</li>
+  <li>Neo4j acoplamiento</li>
+</ul>
+</section>
+<section>
+<h2>Futuro</h2>
+<ul>
+  <li>Desarrollo</li>
+  <li>kaltia</li>
+</ul>
+</section>
+
+<section>
+<h1>Gracias</h1>
+<h4>kaltia.org</h4>
+<h4>@ilcapitanozoek</h4>
+<h4>+MiguelAngelGordian</h4>
+<h4>https://speakerdeck.com/zoek1</h4>
+
+<section>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
