@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" id="svg3061" viewBox="0 0 251.59 165.9" version="1.1">
+  <title id="title3973">Telescope</title>
+  <defs id="defs3063">
+    <filter id="filter3851" height="2.03" width="1.0637" y="-.515" x="-.031856" color-interpolation-filters="sRGB">
+      <feGaussianBlur id="feGaussianBlur3853" stdDeviation="1.2875"/>
+    </filter>
+    <filter id="filter3938" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood3940" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite3942" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur3944" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset3946" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite3948" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linearGradient3950" y2="535.36" gradientUnits="userSpaceOnUse" y1="484.86" x2="138.5" x1="138.5">
+      <stop id="stop3857" stop-color="#ff0" offset="0"/>
+      <stop id="stop3859" stop-color="#cf7b00" stop-opacity="0" offset="1"/>
+    </linearGradient>
+    <filter id="filter4013" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood4015" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite4017" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur4019" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset4021" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite4023" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter4025" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood4027" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite4029" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur4031" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset4033" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite4035" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter4037" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood4039" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite4041" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur4043" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset4045" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite4047" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter4049" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood4051" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite4053" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur4055" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset4057" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite4059" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+    <filter id="filter4061" color-interpolation-filters="sRGB">
+      <feFlood id="feFlood4063" result="flood" flood-opacity=".8" flood-color="rgb(0,0,0)"/>
+      <feComposite id="feComposite4065" operator="in" result="composite1" in2="SourceGraphic" in="flood"/>
+      <feGaussianBlur id="feGaussianBlur4067" stdDeviation="1" result="blur"/>
+      <feOffset id="feOffset4069" result="offset" dx="2" dy="4"/>
+      <feComposite id="feComposite4071" operator="over" result="composite2" in2="offset" in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="layer1" transform="translate(-51.818 -435)">
+    <g id="g3887" filter="url(#filter3938)" transform="matrix(.98189 -.18945 .18945 .98189 -88.89 42.337)">
+      <g id="g3877">
+        <path id="path3077" d="m269.41 463.39c3.3956-2.1639 6.7912-2.1639 10.187 0v45.441c-3.3956 2.1639-6.7912 2.1639-10.187 0z" stroke="#000" stroke-width=".81319px" fill="#a40"/>
+        <g id="g3863">
+          <path id="path3073" d="m80 472.36h100v30h-100z" stroke="#000" stroke-width="1px" fill="url(#linearGradient3950)"/>
+          <path id="path3081" filter="url(#filter3851)" d="m177 473.86-96.5-1 0.5 6h96.5z" fill="#fff"/>
+        </g>
+        <g id="g3867" transform="matrix(.89824 0 0 1.2117 107.88 -103.45)">
+          <path id="path3869" d="m80 472.36h100v30h-100z" stroke="#000" stroke-width="1px" fill="url(#linearGradient3950)"/>
+          <path id="path3871" filter="url(#filter3851)" fill="#fff" d="m177 473.86-96.5-1 0.5 6h96.5z"/>
+        </g>
+        <path id="path3875" d="m74.262 469.87c1.8256-1.6656 3.6512-1.6656 5.4769 0v34.978c-1.8256 1.6656-3.6512 1.6656-5.4769 0z" stroke="#000" stroke-width=".52314px" fill="#a40"/>
+      </g>
+    </g>
+    <path id="path3975" filter="url(#filter4061)" stroke="#000" stroke-width="1px" d="m185 481.86c8.1667-6.8652 16.333-7.9558 24.5-5.5l10.5 20.5-35 7.5z"/>
+    <path id="path3977" style="color:#000000" d="m205.5 490.61c0 2.0711-2.3505 3.75-5.25 3.75s-5.25-1.6789-5.25-3.75 2.3505-3.75 5.25-3.75 5.25 1.6789 5.25 3.75z" transform="matrix(.71429 0 0 1 56.714 -9)" filter="url(#filter4049)" fill="#e6e6e6"/>
+    <path id="path3979" d="m185 503.36-35.5 88h6l34-88.5z" filter="url(#filter4037)" stroke="#000" stroke-width="1px" fill="#fc0"/>
+    <path id="path3981" d="m199 498.86 10.5 83.5h7.5l-14.5-83.5z" transform="matrix(1.001 0 0 .95540 -.21048 21.862)" filter="url(#filter4025)" stroke="#000" stroke-width="1px" fill="#fc0"/>
+    <path id="path3983" d="m211.5 498.36 32 99h-6l-29.5-99.5z" transform="matrix(1.07 0 0 .94560 -14.293 26.54)" filter="url(#filter4013)" stroke="#000" stroke-width="1px" fill="#fc0"/>
+    <path id="path3985" d="m171.02 546.84 36.071-10.959 20.388 9.9626z" stroke="#000" stroke-width="2.0412" fill="none"/>
+  </g>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+        <dc:publisher>
+          <cc:Agent rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Telescope</dc:title>
+        <dc:date>2013-09-08T12:15:15</dc:date>
+        <dc:description/>
+        <dc:source>http://openclipart.org/detail/183212/telescope-by-algotruneman-183212</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>algotruneman</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>astronomy</rdf:li>
+            <rdf:li>spyglass</rdf:li>
+            <rdf:li>telescope</rdf:li>
+            <rdf:li>tripod</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+        <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
